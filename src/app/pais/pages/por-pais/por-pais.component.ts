@@ -9,9 +9,9 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorPaisComponent implements OnInit {
 
-  termino: string = '';
+  termino : string = '';
   hayError: boolean = false;
-  paises: Country[] = [];
+  paises  : Country[] = [];
 
   constructor(private paisService: PaisService) { }
 
@@ -51,6 +51,10 @@ export class PorPaisComponent implements OnInit {
       complete: () => console.info('complete')
     });
 
+  }
+
+  sugerencias(termino: string) {
+    this.hayError = false;
   }
 
 }
