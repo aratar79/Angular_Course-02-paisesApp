@@ -12,6 +12,7 @@ export class PorPaisComponent implements OnInit {
   termino : string = '';
   hayError: boolean = false;
   paises  : Country[] = [];
+  
 
   constructor(private paisService: PaisService) { }
 
