@@ -25,7 +25,7 @@ export class PaisService {
   }
 
   getPaisByAlpha(id: string): Observable<Country[]> {
-
+    // In April 2022 apirest returns an array instead of an object.
     const url = `${this.baseUri}/alpha/${id}`;
     return this.http.get<Country[]>(url);
   }
