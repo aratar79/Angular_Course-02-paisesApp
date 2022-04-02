@@ -29,4 +29,11 @@ export class PaisService {
     const url = `${this.baseUri}/alpha/${id}`;
     return this.http.get<Country[]>(url);
   }
+
+  buscarPaisByregion(termino: string): Observable<Country[]> {
+
+    const url = `${this.baseUri}/region/${termino}`;
+    return this.http.get<Country[]>(url);
+  }
+
 }
