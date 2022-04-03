@@ -19,6 +19,7 @@ export class PorRegionComponent {
   getClassCss(region: string) {
     return (region === this.regionActiva) ? 'btn btn-secondary' : 'btn btn-outline-secondary';
   }
+  
   activarRegion(region: string) {
     
     if(region === this.regionActiva) return;

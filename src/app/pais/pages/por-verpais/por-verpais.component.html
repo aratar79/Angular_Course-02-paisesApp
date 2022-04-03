@@ -1,55 +1,57 @@
-<div *ngIf="!pais; else divPais" class="alert alert-info">
-    Cargando país.....
-</div>
-
-<ng-template #divPais>
-    <div class="row">
-        <div class="col-12 title">
-            <h2>Pais: {{pais.name.common}}</h2>
+<div class="animate__animated animate__fadeIn">
+    <div *ngIf="!pais; else divPais" class="alert alert-info">
+        Cargando país.....
+    </div>
+    
+    <ng-template #divPais>
+        <div class="row">
+            <div class="col-12 title">
+                <h2>Pais: {{pais.name.common}}</h2>
+            </div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+                <h5>Bandera</h5>
+                <img [src]="pais.flags.png" class="small-flag " alt="pais.name.common">
+            </div>
+            <div class="col text-center">
+                <h5>Población</h5>
+                <h2>{{pais.population | number}}</h2>
+            </div>
         </div>
         <hr>
-    </div>
-    <div class="row">
-        <div class="col-4 text-center">
-            <h5>Bandera</h5>
-            <img [src]="pais.flags.png" class="small-flag " alt="pais.name.common">
-        </div>
-        <div class="col text-center">
-            <h5>Población</h5>
-            <h2>{{pais.population | number}}</h2>
-        </div>
-    </div>
-    <hr>    
-    <table class="table table-striped">
-        <tbody>
-            <tr>
-                <td>Capital -></td>
-                <td class="">{{pais.capital}}</td>
-            </tr>
-            <tr>
-                <td>Rodea con -></td>
-                <td class="">{{pais.borders}}</td>
-            </tr>
-            <tr>
-                <td>Moneda -></td>
-                <td class="">{{pais.currencies.EUR.name}}</td>
-            </tr>
-            <tr>
-                <td>Zona Horaria -></td>
-                <td class="">{{pais.timezones}}</td>
-            </tr>
-            <tr>
-                <td>Región -></td>
-                <td class="">{{pais.region}}</td>
-            </tr>
-            <tr>
-                <td>Subregión -></td>
-                <td class="">{{pais.subregion}}</td>
-            </tr>
-            <tr>
-                <td>cca2 -></td>
-                <td class="">{{pais.cca2}}</td>
-            </tr>
-        </tbody>
-    </table>
-</ng-template>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>Capital -></td>
+                    <td class="">{{pais.capital}}</td>
+                </tr>
+                <tr>
+                    <td>Rodea con -></td>
+                    <td class="">{{pais.borders}}</td>
+                </tr>
+                <tr>
+                    <td>Moneda -></td>
+                    <td class="">{{pais.currencies.EUR.name}}</td>
+                </tr>
+                <tr>
+                    <td>Zona Horaria -></td>
+                    <td class="">{{pais.timezones}}</td>
+                </tr>
+                <tr>
+                    <td>Región -></td>
+                    <td class="">{{pais.region}}</td>
+                </tr>
+                <tr>
+                    <td>Subregión -></td>
+                    <td class="">{{pais.subregion}}</td>
+                </tr>
+                <tr>
+                    <td>cca2 -></td>
+                    <td class="">{{pais.cca2}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>
+</div>

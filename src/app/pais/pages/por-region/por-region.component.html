@@ -1,28 +1,30 @@
-<h3>Buscar por región - {{regionActiva | titlecase}}</h3>
-<hr>
-<h5>Seleccione una región</h5>
-<div class="row">
-    <div class="col">
-        <!-- alternatives to conditional css classes-->
-        <!--1 [class.btn-secondary]="region === regionActiva" -->
-        <!--2 [ngClass]="{
-                    'btn-secondary': region === regionActiva,
-                    'btn-outline-secondary': region !== regionActiva
-                }" -->
-        <!--3 [class]="region === regionActiva ? 'btn btn-secondary' : 'btn btn-outline-secondary'" -->
-        <button *ngFor="let region of regiones"
-                [class]="getClassCss(region)"
-                (click)="activarRegion(region)">
-                {{region | titlecase}}
-        </button>
+<div class="animate__animated animate__fadeIn">
+    <h3>Buscar por región - {{regionActiva | titlecase}}</h3>
+    <hr>
+    <h5>Seleccione una región</h5>
+    <div class="row">
+        <div class="col">
+            <!-- alternatives to conditional css classes-->
+            <!--1 [class.btn-secondary]="region === regionActiva" -->
+            <!--2 [ngClass]="{
+                        'btn-secondary': region === regionActiva,
+                        'btn-outline-secondary': region !== regionActiva
+                    }" -->
+            <!--3 [class]="region === regionActiva ? 'btn btn-secondary' : 'btn btn-outline-secondary'" -->
+            <button *ngFor="let region of regiones"
+                    [class]="getClassCss(region)"
+                    (click)="activarRegion(region)">
+                    {{region | titlecase}}
+            </button>
+        </div>
     </div>
+    <hr>
 </div>
-<hr>
 <div class="alert alert-danger" *ngIf="hayError">
     No se encontró la busqueda...
 </div>
 <div class="row" *ngIf="paises.length > 0">
     <div class="col">
-        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+        <app-pais-tabla [paises]="paises" class="animate__animated animate__fadeIn"></app-pais-tabla>
     </div>
 </div>
